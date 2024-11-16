@@ -16,7 +16,7 @@ body {
   background: rgb(var(--background-rgb));
   overflow: hidden;
   perspective: 2000px;
-  position: fixed; /* Prevent scrolling */
+  position: fixed;
 }
 
 * {
@@ -26,26 +26,27 @@ body {
 }
 
 #container {
-  width: min(140rem, 200vmin); /* Use viewport-relative units with a max size */
+  width: min(140rem, 160vw);
   aspect-ratio: 1;
   display: grid;
   grid-template-rows: repeat(40, 1fr);
   grid-template-columns: repeat(40, 1fr);
-  position: absolute;
   transform-origin: center center;
-  transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(var(--container-scale, 1.25));
+  transform: rotateX(35deg) rotateY(-5deg) rotateZ(20deg) scale(1.35);
+  position: absolute;
 }
 
-/* Responsive scaling */
 @media (max-width: 768px) {
   #container {
-    --container-scale: 0.8; /* Smaller scale on mobile */
+    width: min(140rem, 200vw);
+    transform: rotateX(35deg) rotateY(-5deg) rotateZ(20deg) scale(1.1);
   }
 }
 
 @media (max-width: 480px) {
   #container {
-    --container-scale: 0.6; /* Even smaller scale on very small screens */
+    width: min(140rem, 350vw);
+    transform: rotateX(35deg) rotateY(-5deg) rotateZ(20deg) scale(0.9);
   }
 }
 
@@ -59,7 +60,7 @@ body {
 
 #container:before {
   z-index: 2;
-  background-image: url("https://assets.codepen.io/1468070/plus-pattern-center.png");
+  background-image: url("../img/plus-pattern-center.png");
   background-size: 5%;
   background-repeat: repeat;
   opacity: 0.25;
@@ -180,4 +181,103 @@ body {
 .meta-link > a > i {
   height: 1rem;
   line-height: 1rem;
+}
+
+/* Profile Container Styles */
+.profile-container {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking through to background */
+}
+
+.profile-content {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: min(80vw, 500px);
+  width: 100%;
+  color: white;
+  pointer-events: auto; /* Re-enables clicking for the content */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-image-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-text {
+  text-align: center;
+}
+
+.profile-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.profile-text .title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-text .bio {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for profile container */
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 1.5rem;
+  }
+
+  .profile-image-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-text h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-content {
+    padding: 1rem;
+  }
+
+  .profile-image-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-text .title {
+    font-size: 1rem;
+  }
+
+  .profile-text .bio {
+    font-size: 0.9rem;
+  }
 }
