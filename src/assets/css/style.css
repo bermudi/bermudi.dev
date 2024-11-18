@@ -201,7 +201,7 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2rem;
-  max-width: min(80vw, 65%);
+  max-width: min(80vw, 60%);
   width: 100%;
   color: white;
   pointer-events: auto; /* Re-enables clicking for the content */
@@ -244,38 +244,55 @@ body {
 }
 
 .profile-text h1 {
+  position: relative;
+  z-index: 1;
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 400;
   font-family: 'Rubik Glitch', system-ui;
   letter-spacing: 0.05em;
   background: linear-gradient(45deg, 
-    #ff1b6b,
-    #ff758c,
-    #c084fc,
-    #a855f7,
-    #d946ef,
-    #ec4899,
-    #ff1b6b
-  );
+  #4a0070,     /* Deepest dark violet */
+  #6a0dad,     /* Dark purple */
+  #6a0dad,     /* Dark purple (repeated) */
+  #8a2be2,     /* Blue-violet */
+  #9633ff,     /* Vivid purple */
+  #8e24ff,     /* Bright neon purple */
+  #b847ff,     /* Intense neon violet */
+  #ba55d3,     /* Medium orchid */
+  #c92bff,     /* Bright neon magenta */
+  #d946ef,     /* Vibrant magenta */
+  #d946ef,     /* Hot magenta (repeated) */
+  #da70d6,     /* Orchid */
+  #e336ff,     /* Electric purple */
+  #ff00ff,     /* Pure neon magenta */
+  #ff00ff      /* Pure neon magenta (repeated) */
+);
   background-size: 300% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: purpleShift 8s ease infinite;
   text-shadow: 
-    0 0 10px rgba(255, 27, 107, 0.5),
-    0 0 20px rgba(168, 85, 247, 0.3),
-    0 0 30px rgba(236, 72, 153, 0.2);
-  position: relative;
+      0 0 10px rgba(255, 27, 107, 0.5),
+      0 0 20px rgba(168, 85, 247, 0.3),
+      0 0 30px rgba(236, 72, 153, 0.2);
 }
 
 .profile-text h1::after {
   content: attr(data-text);
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   z-index: -1;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: center;
   filter: blur(8px);
   opacity: 0.7;
 }
