@@ -163,7 +163,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: url('../img/textmoji-bermudi.png') center center/contain;
+  background: url('../img/bear.png') center center/contain;
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(255, 255, 255, 0.2);
   background-repeat: no-repeat;
@@ -250,7 +250,7 @@ body {
 }
 
 .profile-text .bio {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.8;
   font-size: 0.95rem;
   font-family: 'Electrolize', sans-serif;
@@ -259,11 +259,10 @@ body {
 }
 
 .profile-text .quote {
-  color: rgba(255, 255, 255, 0.90);
-  /* line-height: 1.8; */
-  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.616);
+  font-size: 1.2rem;
   padding: 1em;
-  font-family: 'Alumni Sans Pinstripe', sans-serif;
+  font-family: 'Smooch Sans', sans-serif;
 }
 
 /* Responsive adjustments for profile container */
@@ -318,6 +317,7 @@ body {
 
 #links .label {
   display: block;
+  font-size: 1.4rem;
   margin-bottom: 5px; /* Additional spacing if needed */
   padding: 0.5em 0em 0em 0em;
   font-family: 'Rubik Glitch', sans-serif;
