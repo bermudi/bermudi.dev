@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const morphProfileImage = () => {
-      const newImg = document.createElement('img');
-      newImg.src = `/assets/img/${getRandomProfileImage()}`;
-      newImg.id = 'profile-img';
-      newImg.alt = 'Profile Image';
+      profileImg.style.opacity = 0;
 
-      newImg.onload = () => {
-        morphdom(profileImg, newImg);
-      };
+      setTimeout(() => {
+        profileImg.src = `/assets/img/${getRandomProfileImage()}`;
+        profileImg.onload = () => {
+          profileImg.style.opacity = 1;
+        };
+      }, 500);
     };
 
-    setTimeout(morphProfileImage, 5000);
+    setInterval(morphProfileImage, 10000);
   } else {
     console.error('Profile image element not found.');
   }
