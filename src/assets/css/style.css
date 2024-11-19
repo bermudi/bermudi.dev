@@ -129,61 +129,6 @@ body {
   background-color: rgb(var(--yellow-rgb));
 }
 
-/* -- Links -- */
-
-#links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: fixed; /* Changed from absolute to fixed */
-  bottom: 0px;
-  left: 0px;
-  z-index: 100;
-  padding: 1rem;
-}
-
-.meta-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.meta-link > :is(span, a) {
-  font-family: "Rubik", sans-serif;
-  font-size: clamp(0.8rem, 3vw, 1.25rem); /* Responsive font size */
-  color: white;
-}
-
-.meta-link > .label {
-  text-align: right;
-}
-
-.meta-link > a {
-  text-decoration: none;
-  outline: none;
-}
-
-.meta-link > a.source {
-  color: rgb(94, 106, 210);
-}
-
-.meta-link > a:is(:hover, :focus) > i {
-  color: white;  
-}
-
-.meta-link > a.youtube {
-  color: rgb(239, 83, 80);
-}
-
-.meta-link > a.youtube > i {
-  padding-top: 0.2rem; 
-}
-
-.meta-link > a > i {
-  height: 1rem;
-  line-height: 1rem;
-}
-
 /* Profile Container Styles */
 .profile-container {
   position: fixed;
@@ -200,8 +145,8 @@ body {
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 2rem;
-  max-width: min(80vw, 60%);
+  padding: 3.5rem;
+  max-width: min(80vw, 55%);
   width: 100%;
   color: white;
   pointer-events: auto; /* Re-enables clicking for the content */
@@ -246,7 +191,7 @@ body {
 .profile-text h1 {
   position: relative;
   z-index: 1;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: 400;
   font-family: 'Rubik Glitch', system-ui;
@@ -301,21 +246,31 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  font-family: 'Mako', sans-serif;
+  font-family: 'Electrolize', sans-serif;
 }
 
 .profile-text .bio {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   font-size: 0.95rem;
-  font-family: 'Mako', sans-serif;
+  font-family: 'Electrolize', sans-serif;
   letter-spacing: 0.02em;
+  padding: 0.2em;
+}
+
+.profile-text .quote {
+  color: rgba(255, 255, 255, 0.90);
+  /* line-height: 1.8; */
+  font-size: 1.3rem;
+  padding: 1em;
+  font-family: 'Alumni Sans Pinstripe', sans-serif;
 }
 
 /* Responsive adjustments for profile container */
 @media (max-width: 768px) {
   .profile-content {
-    padding: 1.5rem;
+    padding: 1rem;
+    max-width: min(80vw, 80%);
   }
 
   .profile-image-placeholder {
@@ -330,7 +285,8 @@ body {
 
 @media (max-width: 480px) {
   .profile-content {
-    padding: 1rem;
+    padding: 0.8rem;
+    max-width: min(80vw, 80%);
   }
 
   .profile-image-placeholder {
@@ -349,4 +305,161 @@ body {
   .profile-text .bio {
     font-size: 0.9rem;
   }
+}
+
+/* Links section */
+
+/* Container styling */
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#links .label {
+  display: block;
+  margin-bottom: 5px; /* Additional spacing if needed */
+  padding: 0.5em 0em 0em 0em;
+  font-family: 'Rubik Glitch', sans-serif;
+}
+
+.meta-link {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between links */
+}
+
+/* Dot separator styling */
+.dot {
+  color: #666;
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+/* General link styling */
+.meta-link a {
+  text-decoration: none;
+  /* padding: 6px 5px; */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.meta-link a i {
+  font-size: 18px;
+}
+
+/* Specific social media colors and hover effects */
+.github {
+  color: #333;
+}
+
+.github:hover {
+  color: #000;
+  background: #f0f0f0;
+}
+
+.youtube {
+  color: #FF0000;
+}
+
+.youtube:hover {
+  color: #fff;
+  background: #FF0000;
+}
+
+.bluesky {
+  color: #1DA1F2;
+}
+
+.bluesky:hover {
+  color: #fff;
+  background: #1DA1F2;
+}
+
+.linkedin {
+  color: #0077B5;
+}
+
+.linkedin:hover {
+  color: #fff;
+  background: #0077B5;
+}
+
+/* Hover animation for all links */
+.meta-link a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add a subtle animation when clicking */
+.meta-link a:active {
+  transform: translateY(0);
+}
+
+/* Updated link styling with gradient glow */
+.meta-link {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.meta-link a {
+  text-decoration: none;
+  /* padding: 8px 12px; */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.meta-link a i {
+  font-size: 20px;
+  background: linear-gradient(45deg, 
+    #4a0070,
+    #6a0dad,
+    #8a2be2,
+    #9633ff,
+    #8e24ff,
+    #b847ff,
+    #ba55d3,
+    #c92bff,
+    #d946ef,
+    #da70d6,
+    #e336ff,
+    #ff00ff
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: purpleShift 8s ease infinite;
+}
+
+/* Remove previous color-specific styles */
+.github, .youtube, .bluesky, .linkedin {
+  color: inherit;
+}
+
+/* Updated hover effects */
+.meta-link a:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meta-link a:hover i {
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5))
+         drop-shadow(0 0 12px rgba(236, 72, 153, 0.3));
+}
+
+/* Dot separator update */
+.dot {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+/* Keep the click animation */
+.meta-link a:active {
+  transform: translateY(0);
 }
