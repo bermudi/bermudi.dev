@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const container = document.querySelector("#container"),
-        tile = document.querySelector(".tile");
+    tile = document.querySelector(".tile");
 
   if (container && tile) {
-    for(let i = 0; i < 1599; i++) {
+    for (let i = 0; i < 1599; i++) {
       container.appendChild(tile.cloneNode());
     }
   } else {
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (profileImg) {
     const profileImages = [
-      'profile-01.png',
-      'profile-02.png',
-      'profile-03.jpeg',
-      'profile-04.png',
-      'profile-05.jpeg',
-      'profile-06.jpeg'
+      'profile-01.webp',
+      'profile-02.webp',
+      'profile-03.webp',
+      'profile-04.webp',
+      'profile-05.webp',
+      'profile-06.webp'
     ];
 
     const getRandomProfileImage = () => {
