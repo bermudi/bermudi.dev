@@ -4,6 +4,7 @@
   "description": "Personal website with dynamic background",
   "main": "index.js",
   "scripts": {
+    "dev": "eleventy --serve",
     "start": "eleventy --serve",
     "build": "eleventy"
   },
